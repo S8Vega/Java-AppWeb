@@ -1,7 +1,7 @@
 package com.ufps.java.dominio.modelo;
 
 import com.ufps.java.dominio.error.ConstantesError;
-import com.ufps.java.dominio.utilidad.ConstantesUtilidad;
+import com.ufps.java.dominio.utilidad.UbicacionUtilidad;
 import lombok.Builder;
 import org.apache.commons.io.FileUtils;
 
@@ -27,6 +27,10 @@ public class Archivo {
         return nombre.substring(0, punto);
     }
 
+    public String getUbicacion() {
+        return getFichero().getAbsolutePath();
+    }
+
     public String getBase64() throws IOException {
         if (base64 != null) return base64;
         byte[] bytes = FileUtils.readFileToByteArray(fichero);
@@ -37,12 +41,12 @@ public class Archivo {
     public File getFichero() {
         if (fichero != null) return fichero;
         byte[] bytes = Base64.getDecoder().decode(base64);
-        try (OutputStream stream = new FileOutputStream(ConstantesUtilidad.DIR.concat(nombre))) {
+        try (OutputStream stream = new FileOutputStream(UbicacionUtilidad.getUbicacion().concat(nombre))) {
             stream.write(bytes);
         } catch (Exception e) {
             System.err.println(ConstantesError.NO_SE_PUEDE_CONVERTIR_A_ARCHIVO);
         }
-        fichero = new File(ConstantesUtilidad.DIR.concat(nombre));
+        fichero = new File(UbicacionUtilidad.getUbicacion().concat(nombre));
         return fichero;
     }
 
