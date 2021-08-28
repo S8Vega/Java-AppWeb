@@ -1,4 +1,4 @@
-package com.ufps.java.web;
+package com.ufps.java.infraestructura;
 
 
 import com.aspose.words.Document;

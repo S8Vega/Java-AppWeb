@@ -12,10 +12,11 @@ public class ConvertirDocxOdtUseCaseImpl implements ConvertirUseCase {
     @Override
     public Archivo ejecutar(Archivo archivo) throws Exception {
         Document documento = new Document(archivo.getFichero().getCanonicalPath());
-        String nombreNuevo = ConstantesUtilidad.DIR.concat(archivo.getNombreSinExtencion()).concat(".odt");
-        documento.save(nombreNuevo, SaveFormat.ODT);
+        String nombreNuevo = archivo.getNombreSinExtencion().concat(".odt");
+        documento.save(ConstantesUtilidad.DIR.concat(nombreNuevo), SaveFormat.ODT);
         return Archivo.builder()
-                .fichero(new File(nombreNuevo))
+                .nombre(nombreNuevo)
+                .fichero(new File(ConstantesUtilidad.DIR.concat(nombreNuevo)))
                 .build();
     }
 
