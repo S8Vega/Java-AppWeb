@@ -22,6 +22,11 @@ public class Archivo {
         return nombre;
     }
 
+    public String getNombreSinExtencion() {
+        int punto = nombre.lastIndexOf(".");
+        return nombre.substring(0, punto);
+    }
+
     public String getBase64() throws IOException {
         if (base64 != null) return base64;
         byte[] bytes = FileUtils.readFileToByteArray(fichero);
