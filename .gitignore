@@ -35,3 +35,9 @@ build/
 src/main/resources/files/
 
 .mvn/wrapper/
+
+*.odt
+
+*.docx
+
+*.pdf
