@@ -5,19 +5,14 @@ import com.ufps.java.dominio.usecase.ConvertirUseCase;
 import com.ufps.java.infraestructura.configuracion.BeanConfiguracion;
 import com.ufps.java.infraestructura.web.request.ConvertirRequest;
 import com.ufps.java.infraestructura.web.response.ConvertirResponse;
-import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.io.IOException;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/convertir")
+@CrossOrigin(origins = "*")
 public class ConvertirControlador {
 
     private ConvertirUseCase convertirUseCase;
