@@ -11,8 +11,8 @@ public class ConvertirOdsPdfUseCaseImpl implements ConvertirUseCase{
     @Override
     public Archivo ejecutar(Archivo archivo) throws Exception {
         Workbook book = new Workbook(archivo.getUbicacion());
-        String nombreNuevo = archivo.getNombreSinExtension().concat(".docx");
-        book.save(UbicacionUtilidad.getUbicacion().concat(nombreNuevo), SaveFormat.DOCX);
+        String nombreNuevo = archivo.getNombreSinExtension().concat(".pdf");
+        book.save(UbicacionUtilidad.getUbicacion().concat(nombreNuevo), SaveFormat.PDF);
         return Archivo.builder()
                 .nombre(nombreNuevo)
                 .fichero(new File(UbicacionUtilidad.getUbicacion().concat(nombreNuevo)))
