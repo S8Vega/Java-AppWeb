@@ -12,7 +12,7 @@ public class ConvertirOdtDocxUseCaseImpl implements ConvertirUseCase {
     @Override
     public Archivo ejecutar(Archivo archivo) throws Exception {
         Document documento = new Document(archivo.getUbicacion());
-        String nombreNuevo = archivo.getNombreSinExtencion().concat(".docx");
+        String nombreNuevo = archivo.getNombreSinExtension().concat(".docx");
         documento.save(UbicacionUtilidad.getUbicacion().concat(nombreNuevo), SaveFormat.DOCX);
         return Archivo.builder()
                 .nombre(nombreNuevo)

@@ -22,7 +22,7 @@ public class Archivo {
         return nombre;
     }
 
-    public String getNombreSinExtencion() {
+    public String getNombreSinExtension() {
         int punto = nombre.lastIndexOf(".");
         return nombre.substring(0, punto);
     }

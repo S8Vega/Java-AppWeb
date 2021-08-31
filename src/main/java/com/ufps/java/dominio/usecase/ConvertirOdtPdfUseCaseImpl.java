@@ -12,7 +12,7 @@ public class ConvertirOdtPdfUseCaseImpl implements ConvertirUseCase {
     @Override
     public Archivo ejecutar(Archivo archivo) throws Exception {
         Document documento = new Document(archivo.getUbicacion());
-        String nombreNuevo = archivo.getNombreSinExtencion().concat(".pdf");
+        String nombreNuevo = archivo.getNombreSinExtension().concat(".pdf");
         documento.save(UbicacionUtilidad.getUbicacion().concat(nombreNuevo), SaveFormat.PDF);
         return Archivo.builder()
                 .nombre(nombreNuevo)

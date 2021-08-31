@@ -21,7 +21,7 @@ public class ConvertirControlador {
     @PostMapping
     public ResponseEntity<ConvertirResponse> convertir(@RequestBody ConvertirRequest request) throws Exception {
         try {
-            convertirUseCase = (ConvertirUseCase) context.getBean(getBean(request.getExtencionFuente(), request.getExtencionDestino()));
+            convertirUseCase = (ConvertirUseCase) context.getBean(getBean(request.getExtensionFuente(), request.getExtensionDestino()));
         } catch (Exception e) {
             throw new Exception("La conversion con esas extenciones no esta disponible.");
         }
