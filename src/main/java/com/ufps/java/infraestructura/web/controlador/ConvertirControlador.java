@@ -10,13 +10,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("/convertir")
 @CrossOrigin(origins = "*")
 public class ConvertirControlador {
 
     private ConvertirUseCase convertirUseCase;
-    private ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfiguracion.class);
+    private final ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfiguracion.class);
 
     @PostMapping
     public ResponseEntity<ConvertirResponse> convertir(@RequestBody ConvertirRequest request) throws Exception {
@@ -40,6 +43,18 @@ public class ConvertirControlador {
 
     private String getBean(String fuente, String destino) {
         return fuente.toUpperCase().concat("_").concat(destino.toUpperCase());
+    }
+
+    @GetMapping
+    public ResponseEntity<List<String>> listarCoversores() {
+        List<String> conversores = new ArrayList<>();
+        String[] beanNombres = context.getBeanDefinitionNames();
+        for (String beanNombre : beanNombres) {
+            if (beanNombre.contains("_")) {
+                conversores.add(beanNombre.replace("_", " a "));
+            }
+        }
+        return ResponseEntity.ok(conversores);
     }
 
 }
