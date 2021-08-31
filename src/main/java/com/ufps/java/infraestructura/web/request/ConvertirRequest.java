@@ -8,8 +8,8 @@ import lombok.Data;
 public class ConvertirRequest {
 
     private String nombreArchivo;
-    private String extencionFuente;
-    private String extencionDestino;
+    private String extensionFuente;
+    private String extensionDestino;
     private String base64;
 
 }
