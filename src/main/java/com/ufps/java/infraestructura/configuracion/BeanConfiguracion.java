@@ -45,6 +45,25 @@ public class BeanConfiguracion {
     @Bean(name = "ODS_PDF")
     ConvertirUseCase getConvertirOdsPdfUseCaseImpl() {
         return new ConvertirOdsPdfUseCaseImpl();
+
+    @Bean(name = "ODP_PPTX")
+    ConvertirUseCase getConvertirOdpPptxCaseImpl() {
+        return new ConvertirOdpPptxCaseImpl();
+    }
+
+    @Bean(name = "PPTX_ODP")
+    ConvertirUseCase getConvertirPptxOdpCaseImpl() {
+        return new ConvertirPptxOdpCaseImpl();
+    }
+
+    @Bean(name = "PPTX_PDF")
+    ConvertirUseCase getConvertirPptxPdfCaseImpl() {
+        return new ConvertirPptxPdfCaseImpl();
+    }
+
+    @Bean(name = "ODP_PDF")
+    ConvertirUseCase getConvertirOdpPdfCaseImpl() {
+        return new ConvertirOdpPdfCaseImpl();
     }
 
 }
