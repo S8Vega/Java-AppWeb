@@ -32,6 +32,14 @@ El método (GET /convertir) retorna una lista con todas las conversiones disponi
     "DOCX a PDF",
     "ODT a DOCX",
     "ODT a PDF"
+    "XLSX a ODS"
+    "XLSX a PDF"
+    "ODS a XLSX"
+    "ODS a PDF"
+    "PPTX a ODP"
+    "PPTX a PDF"
+    "ODP a PPTX"
+    "ODP a PDF"
 ]
 ```
 
