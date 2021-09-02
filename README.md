@@ -71,6 +71,7 @@ Actualmente la API se encuentra en una instancia de [EC2](https://aws.amazon.com
 - [@S8Vega](https://github.com/S8Vega)
 - [@coltdeus](https://github.com/coltdeus)
 - [@nicolaspa1](https://github.com/nicolaspa1)
+- [@SHUNNIORR](https://github.com/SHUNNIORR)
 
 ## **Licencia**
 
