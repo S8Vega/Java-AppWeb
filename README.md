@@ -1,6 +1,6 @@
 # **Java-AppWeb**
 
-API REST en Spring para la conversión de archivos.
+API REST en Spring para la conversión de archivos utilizando [Aspose](http://www.aspose.com/).
 
 ## Como utilizar
 
@@ -13,6 +13,7 @@ La API tiene un solo endpoint (/convertir) con dos métodos HTTP, el método POS
   "extensionDestino": "PDF",
   "base64": "decodificacion-del-archivo-en-base64"
 }
+
 ```
 
 Y si la petición se completa exitosamente se recibe una respuesta con el siguiente formato:
@@ -22,6 +23,7 @@ Y si la petición se completa exitosamente se recibe una respuesta con el siguie
     "nombreArchivo": "nombre-del-archivo.pdf",
     "base64": "decodificacion-del-archivo-en-base64"
 }
+
 ```
 
 El método (GET /convertir) retorna una lista con todas las conversiones disponibles:
@@ -41,9 +43,12 @@ El método (GET /convertir) retorna una lista con todas las conversiones disponi
     "ODP a PPTX"
     "ODP a PDF"
 ]
+
 ```
 
-Para mayor información se puede observar la documentación con [swagger](https://swagger.io/) con (GET /swagger-ui.html)
+Para mayor información se puede observar la documentación con [swagger](https://swagger.io/) con (GET /swagger-ui.html).
+
+Para el front, hay una implementación en el siguiente [link](https://github.com/Arquitectura-de-software-UFPS-2021-2/Java-AppWebFront).
 
 ## **Contribuciones**
 
@@ -58,6 +63,7 @@ Para agregar una conversion de una extencion A a una extencion B:
 ConvertirUseCase getConvertirABUseCaseImpl() {
         return new ConvertirABUseCaseImpl();
 }
+
 ```
 
 - Donde A es la extensión fuente y B es la extensión destino.
